@@ -7,18 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <objc/objc-runtime.h>
-typedef NS_ENUM(NSInteger, XWVMetaObjectMember) {
+#import <objc/runtime.h>
+typedef NS_ENUM(NSInteger, XWVMetaObjectMemberType) {
     XWVMetaObjectMemberMethod,//默认从0开始
     XWVMetaObjectMemberProperty,
     XWVMetaObjectMemberInitializer,
 };
 
 @interface XWVMetaObjectMember : NSObject
-@property (nonatomic, assign) XWVMetaObjectMember memberType;
+@property (nonatomic, assign) XWVMetaObjectMemberType memberType;
 @property (nonatomic, assign) SEL selector;
 @property (nonatomic, assign) SEL getter;
-@property (nonatomic, assign) SEL selector;
+@property (nonatomic, assign) SEL setter;
 @property (nonatomic, assign) int arity;
 - (instancetype)initWithMethodSelector:(SEL)selector arity:(int)arity;
 - (instancetype)initWithPropertyGetter:(SEL)getter setter:(SEL)setter;
