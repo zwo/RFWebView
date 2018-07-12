@@ -74,7 +74,7 @@
     NSMutableString *muString = [NSMutableString stringWithString:@""];
     for (NSString *key in allKeys) {
         NSString *method=[self generateMethod:key this:@"exports"];
-        [muString appendFormat:@"%@\n",method];
+        [muString appendFormat:@"exports.%@ = %@\n", key, method];
     }
     NSString *base=@"function(){return XWVPlugin.invokeNative.bind(arguments.callee, \'\').apply(null, arguments);}";
     NSString *ret=[NSString stringWithFormat:@"(function(exports) {\n%@})(XWVPlugin.createPlugin('%@', '%@', %@));\n", muString, self.identifier, self.principal.namespace, base];
@@ -83,7 +83,7 @@
 
 - (NSString *)generateMethod:(NSString *)key this:(NSString *)thisJS
 {
-    NSString *stub = [NSString stringWithFormat:@"XWVPlugin.invokeNative.bind(%@, %@)",thisJS, key];
+    NSString *stub = [NSString stringWithFormat:@"XWVPlugin.invokeNative.bind(%@, '%@')",thisJS, key];
     stub = [NSString stringWithFormat:@"%@;", stub];
     return stub;
 }

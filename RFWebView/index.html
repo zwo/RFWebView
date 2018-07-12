@@ -39,23 +39,13 @@
 
 <h2>Samples of XWebView</h2>
 
-<input type='button' value='Hello' onclick='sample.hello.show("Hello, world!");' />
-<input type='button' value='Vibrate' onclick='sample.vibrate();' />
-<input type='button' value='TwoArgs' onclick='sample.vibrate.twoArgsOne("111","222");' />
+<input type='button' value='No arg' onclick='RFWebAPI.showAlert();' />
+<input type='button' value='Two arg' onclick='RFWebAPI.twoArgsOne("123", "432");' />
+<input type='button' value='GetOpenUID' onclick='RFWebAPI.RFN_GetOpenUIDWithTicket("111","222");' />
 <br />
 
 <br />
-<table>
-  <tr>
-    <td>Prefix: </td>
-    <td><input id='prefix' type='text' /></td>
-    <td><input type='button' value='Set' onclick='echo.prefix=document.getElementById("prefix").value;' /></td>
-  </tr><tr>
-    <td>Message: </td>
-    <td><input id='text' type='text' value='XWebView is cool!' /></td>
-    <td><input type='button' value='Echo' onclick='echo.echo(document.getElementById("text").value, echocb);' /></td>
-  </tr>
-</table>
+
 <br />
 
 </body>

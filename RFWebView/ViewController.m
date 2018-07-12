@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.webView=[[RFWebView alloc] initWithFrame:self.view.frame configuration:[WKWebViewConfiguration new]];
     [self.view addSubview:self.webView];
-    [self.webView loadPlugin:[RFWebAPI new] namespace:@"sample.RFWebAPI"];
+    [self.webView loadPlugin:[RFWebAPI new] namespace:@"RFWebAPI"];
     
     NSURL *fileURL=[[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
     if (@available(iOS 9.0, *)) {

@@ -15,14 +15,14 @@
 }
 - (void)twoArgsOne:(NSString *)one two:(NSString *)two
 {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s %@ %@",__func__, one, two);
 }
 - (void)RFN_GetUserInfoWithCallbackFunctionName:(NSString *)jsFuncName
 {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s %@",__func__, jsFuncName);
 }
 - (void)RFN_GetOpenUIDWithTicket:(NSString *)ticket callbackFunctionName:(NSString *)jsFuncName
 {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s %@ %@",__func__, ticket, jsFuncName);
 }
 @end

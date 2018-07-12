@@ -25,34 +25,12 @@ XWVPlugin = function(channelName) {
 }
 
 XWVPlugin.createNamespace = function(namespace, object) {
-    function callback(p, c, i, a) {
-        if (i < a.length - 1)
-            return (p[c] = p[c] || {});
-        if (p[c] instanceof XWVPlugin)
-            p[c].dispose();
-        return (p[c] = object || {});
-    }
-    var ret = namespace.split('.').reduce(callback, window);
+    var ret = (window[namespace] = object || {});
     return ret;
 }
 
 XWVPlugin.createPlugin = function(channelName, namespace, base) {
-    if (typeof(base) === "string") {
-        // Plugin object is a constructor
-        return XWVPlugin.createConstructor(channelName, namespace, base);
-    }
-
-    if (base instanceof Object) {
-        // Plugin is a mixin object which contains both JavaScript and native methods/properties.
-        var properties = {};
-        Object.getOwnPropertyNames(XWVPlugin.prototype).forEach(function(p) {
-            properties[p] = Object.getOwnPropertyDescriptor(this, p);
-        }, XWVPlugin.prototype);
-        base.__proto__ = Object.create(Object.getPrototypeOf(base), properties);
-        XWVPlugin.call(base, channelName);
-    } else {
-        base = new XWVPlugin(channelName);
-    }
+    XWVPlugin.call(base, channelName);
     return XWVPlugin.createNamespace(namespace, base);
 }
 
@@ -114,38 +92,12 @@ XWVPlugin.invokeNative = function(name) {
         throw 'Invalid invocation';
 
     var args = Array.prototype.slice.call(arguments, 1);
-    if (name.lastIndexOf('#') >= 0) {
-        // Parse type coding
-        var t = name.split('#');
-        name = t[0];
-        args.length = parseInt(t[1], 10) || args.length;
-        if (t[1].slice(-1) == 'p') {
-            // Return a Promise object for async operation
-            args.unshift(name);
-            return new Promise((function(args, resolve, reject) {
-                args[args.length - 1] = {'resolve': resolve, 'reject': reject};
-                XWVPlugin.invokeNative.apply(this, args);
-            }).bind(this, args));
-        }
-    }
+    
 
-    var operand = [];
-    if (this.$properties && this.$properties.hasOwnProperty(name)) {
-        // Update property
-        operand = this.$retainObject(args[0]);
-        this.$properties[name] = args[0];
-    } else {
-        // Invoke method
-        args.forEach(function(v, i, a) {
-            operand[i] = this.$retainObject(v);
-        }, this);
-        // Set null for omitted arguments
-        if (operand.length < args.length)
-            operand.fill(null, operand.length, args.length);
-    }
+    
     this.$channel.postMessage({
         '$opcode':  name,
-        '$operand': operand,
+        '$operand': args,
         '$target':  this.$instanceID
     });
 }
