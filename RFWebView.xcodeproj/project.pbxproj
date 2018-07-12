@@ -17,8 +17,6 @@
 		C4941A7D20EA4F5500F6E7FA /* XWVObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C4941A7C20EA4F5500F6E7FA /* XWVObject.m */; };
 		C4941A8020EB1EBE00F6E7FA /* XWVScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C4941A7F20EB1EBE00F6E7FA /* XWVScriptObject.m */; };
 		C4941AE320EF178D00F6E7FA /* XWVChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4941AE220EF178D00F6E7FA /* XWVChannel.m */; };
-		C4941AE620EF610F00F6E7FA /* XWVMetaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C4941AE520EF610F00F6E7FA /* XWVMetaObject.m */; };
-		C4941AE920EF613C00F6E7FA /* XWVUserScript.m in Sources */ = {isa = PBXBuildFile; fileRef = C4941AE820EF613C00F6E7FA /* XWVUserScript.m */; };
 		C4941AEC20EF615E00F6E7FA /* XWVBindingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C4941AEB20EF615E00F6E7FA /* XWVBindingObject.m */; };
 		C4C9E9AD20F45E5500607E84 /* xwebview.js in Resources */ = {isa = PBXBuildFile; fileRef = C4C9E9AC20F45E5500607E84 /* xwebview.js */; };
 		C4C9E9AF20F45E7A00607E84 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C4C9E9AE20F45E7600607E84 /* index.html */; };
@@ -44,10 +42,6 @@
 		C4941A7F20EB1EBE00F6E7FA /* XWVScriptObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWVScriptObject.m; sourceTree = "<group>"; };
 		C4941AE120EF178D00F6E7FA /* XWVChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWVChannel.h; sourceTree = "<group>"; };
 		C4941AE220EF178D00F6E7FA /* XWVChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWVChannel.m; sourceTree = "<group>"; };
-		C4941AE420EF610F00F6E7FA /* XWVMetaObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWVMetaObject.h; sourceTree = "<group>"; };
-		C4941AE520EF610F00F6E7FA /* XWVMetaObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWVMetaObject.m; sourceTree = "<group>"; };
-		C4941AE720EF613C00F6E7FA /* XWVUserScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWVUserScript.h; sourceTree = "<group>"; };
-		C4941AE820EF613C00F6E7FA /* XWVUserScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWVUserScript.m; sourceTree = "<group>"; };
 		C4941AEA20EF615E00F6E7FA /* XWVBindingObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWVBindingObject.h; sourceTree = "<group>"; };
 		C4941AEB20EF615E00F6E7FA /* XWVBindingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWVBindingObject.m; sourceTree = "<group>"; };
 		C4C9E9AC20F45E5500607E84 /* xwebview.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = xwebview.js; sourceTree = "<group>"; };
@@ -115,10 +109,6 @@
 				C4941A7F20EB1EBE00F6E7FA /* XWVScriptObject.m */,
 				C4941AE120EF178D00F6E7FA /* XWVChannel.h */,
 				C4941AE220EF178D00F6E7FA /* XWVChannel.m */,
-				C4941AE420EF610F00F6E7FA /* XWVMetaObject.h */,
-				C4941AE520EF610F00F6E7FA /* XWVMetaObject.m */,
-				C4941AE720EF613C00F6E7FA /* XWVUserScript.h */,
-				C4941AE820EF613C00F6E7FA /* XWVUserScript.m */,
 				C4941AEA20EF615E00F6E7FA /* XWVBindingObject.h */,
 				C4941AEB20EF615E00F6E7FA /* XWVBindingObject.m */,
 			);
@@ -203,10 +193,8 @@
 				C4941A6620EA455300F6E7FA /* main.m in Sources */,
 				C4941A7D20EA4F5500F6E7FA /* XWVObject.m in Sources */,
 				C4941AEC20EF615E00F6E7FA /* XWVBindingObject.m in Sources */,
-				C4941AE920EF613C00F6E7FA /* XWVUserScript.m in Sources */,
 				C4C9E9B220F460CC00607E84 /* RFWebAPI.m in Sources */,
 				C4941A8020EB1EBE00F6E7FA /* XWVScriptObject.m in Sources */,
-				C4941AE620EF610F00F6E7FA /* XWVMetaObject.m in Sources */,
 				C4941A5820EA455300F6E7FA /* AppDelegate.m in Sources */,
 				C4941A7A20EA4C5B00F6E7FA /* RFWebView.m in Sources */,
 			);
