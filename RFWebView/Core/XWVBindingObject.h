@@ -7,7 +7,10 @@
 //
 
 #import "XWVScriptObject.h"
-
+#import "XWVChannel.h"
 @interface XWVBindingObject : XWVScriptObject
-
+@property (strong, nonatomic) id plugin;
+@property (weak, nonatomic) XWVChannel *channel;
+- (void)invokeNativeMethod:(NSString *)name arguments:(NSArray *)arguments;
+- (instancetype)initWithNamespace:(NSString *)aNameSpace channel:(XWVChannel*)channel object:(id)object;
 @end

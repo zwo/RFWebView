@@ -12,4 +12,6 @@
 @interface RFWebView : WKWebView
 - (void)asyncEvaluateJavaScript:(NSString *_Nonnull)script completionHandler:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))handler;
 - (id _Nullable)syncEvaluateJavaScript:(NSString *_Nonnull)script;
+- (void)loadPlugin:(id _Nonnull)object namespace:(NSString *_Nonnull)aNamespace;
+- (void)prepareForPlugin;
 @end

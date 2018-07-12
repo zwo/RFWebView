@@ -22,6 +22,7 @@
 		C4941AEC20EF615E00F6E7FA /* XWVBindingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C4941AEB20EF615E00F6E7FA /* XWVBindingObject.m */; };
 		C4C9E9AD20F45E5500607E84 /* xwebview.js in Resources */ = {isa = PBXBuildFile; fileRef = C4C9E9AC20F45E5500607E84 /* xwebview.js */; };
 		C4C9E9AF20F45E7A00607E84 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C4C9E9AE20F45E7600607E84 /* index.html */; };
+		C4C9E9B220F460CC00607E84 /* RFWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C9E9B120F460CC00607E84 /* RFWebAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		C4941AEB20EF615E00F6E7FA /* XWVBindingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWVBindingObject.m; sourceTree = "<group>"; };
 		C4C9E9AC20F45E5500607E84 /* xwebview.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = xwebview.js; sourceTree = "<group>"; };
 		C4C9E9AE20F45E7600607E84 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		C4C9E9B020F460CC00607E84 /* RFWebAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFWebAPI.h; sourceTree = "<group>"; };
+		C4C9E9B120F460CC00607E84 /* RFWebAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFWebAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				C4C9E9AE20F45E7600607E84 /* index.html */,
 				C4941A6420EA455300F6E7FA /* Info.plist */,
 				C4941A6520EA455300F6E7FA /* main.m */,
+				C4C9E9B020F460CC00607E84 /* RFWebAPI.h */,
+				C4C9E9B120F460CC00607E84 /* RFWebAPI.m */,
 			);
 			path = RFWebView;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				C4941A7D20EA4F5500F6E7FA /* XWVObject.m in Sources */,
 				C4941AEC20EF615E00F6E7FA /* XWVBindingObject.m in Sources */,
 				C4941AE920EF613C00F6E7FA /* XWVUserScript.m in Sources */,
+				C4C9E9B220F460CC00607E84 /* RFWebAPI.m in Sources */,
 				C4941A8020EB1EBE00F6E7FA /* XWVScriptObject.m in Sources */,
 				C4941AE620EF610F00F6E7FA /* XWVMetaObject.m in Sources */,
 				C4941A5820EA455300F6E7FA /* AppDelegate.m in Sources */,
@@ -339,7 +345,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = A27D4545KT;
 				INFOPLIST_FILE = RFWebView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rfchina.RFWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,7 +362,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RFWebView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rfchina.RFWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 @import WebKit;
+#import "RFWebView.h"
 @interface XWVChannel : NSObject <WKScriptMessageHandler>
-@property (strong, nonatomic) NSString *identifier;
-@property (nonatomic, strong) NSRunLoop *runLoop;
+@property (nonatomic, weak) RFWebView *webView;
+@property (strong, nonatomic) NSMutableDictionary *typeInfo;
 @property (nonatomic, strong) dispatch_queue_t queue;
+@property (nonatomic) void *queueTag;
+- (instancetype)initWithWebView:(RFWebView *)webView;
+- (void)bindPlugin:(id)object toNamespace:(NSString *)aNamespace;
 @end

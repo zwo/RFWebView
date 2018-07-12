@@ -7,16 +7,25 @@
 //
 
 #import "ViewController.h"
-
+#import "RFWebView.h"
+#import "RFWebAPI.h"
 @interface ViewController ()
-
+@property (strong, nonatomic) RFWebView *webView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.webView=[[RFWebView alloc] initWithFrame:self.view.frame configuration:[WKWebViewConfiguration new]];
+    [self.view addSubview:self.webView];
+    [self.webView loadPlugin:[RFWebAPI new] namespace:@"sample.RFWebAPI"];
+    
+    NSURL *fileURL=[[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
+    if (@available(iOS 9.0, *)) {
+        [self.webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+    }
+    
 }
 
 
