@@ -58,6 +58,9 @@
     for (unsigned int i = 0; i < count; ++i) {
         SEL sel = method_getName(methods[i]);
         NSString *selName = NSStringFromSelector(sel);
+        if ([selName hasPrefix:@"."]) {
+            continue;
+        }
         NSString *name=selName;
         NSArray *comp=[selName componentsSeparatedByString:@":"];
         if ([comp count]>1) {

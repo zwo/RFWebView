@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface RFWebAPI : NSObject
+@property (weak, nonatomic) id delegate;
 - (void)showAlert;
 - (void)twoArgsOne:(NSString *)one two:(NSString *)two;
 - (void)RFN_GetUserInfoWithCallbackFunctionName:(NSString *)jsFuncName;
