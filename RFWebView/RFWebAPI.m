@@ -25,4 +25,9 @@
 {
     NSLog(@"%s %@ %@",__func__, ticket, jsFuncName);
 }
+
+- (void)RFN_OpenBrowser:(NSString *)URLString
+{
+    NSLog(@"%s %@",__func__, URLString);
+}
 @end

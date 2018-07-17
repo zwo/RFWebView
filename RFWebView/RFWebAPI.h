@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RFWebAPI : NSObject
+@protocol RFHouseJSExports
+- (void)RFN_OpenBrowser:(NSString *)URLString;
+@end
+
+@interface RFWebAPI : NSObject<RFHouseJSExports>
 @property (weak, nonatomic) id delegate;
 - (void)showAlert;
 - (void)twoArgsOne:(NSString *)one two:(NSString *)two;
