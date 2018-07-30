@@ -64,11 +64,25 @@
         NSString *name=selName;
         NSArray *comp=[selName componentsSeparatedByString:@":"];
         if ([comp count]>1) {
-            name=[comp firstObject];
+            name=[self compositeMethodNamePerJavascriptCore:comp];
         }
         [_typeInfo setObject:selName forKey:name];
     }
     free(methods);
+}
+
+- (NSString *)compositeMethodNamePerJavascriptCore:(NSArray *)array
+{
+    NSMutableString *muString=[NSMutableString stringWithString:array[0]];
+    for (int i=1; i<array.count; i++) {
+        NSString *originalSentence = array[i];
+        if (originalSentence.length==0) {
+            continue;
+        }
+        NSString *capitalisedSentence = [originalSentence stringByReplacingCharactersInRange:NSMakeRange(0,1)                                                                         withString:[[originalSentence substringToIndex:1] capitalizedString]];
+        [muString appendString:capitalisedSentence];
+    }
+    return muString;
 }
 
 - (NSString *)generateStubs
